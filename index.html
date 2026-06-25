@@ -519,9 +519,9 @@ const dailyIntro = 'Check off each exercise as you complete it each day. The cou
 const dailyExercises = [
   { name: 'Posture Openers', rx: '5 sec holds · 5 reps · every hour', log: false, video: '',
     cues: ['Stand tall with your arms relaxed by your sides.', 'Rotate your palms outward so they face forward.', 'Squeeze your shoulder blades back and down, then hold for 5 seconds.'] },
-  { name: 'Break the Stick', rx: '5 sec hold · 5 reps AM · 5 reps PM', log: false, video: '',
+  { name: 'Break the Stick', rx: '5 sec hold · 5 reps AM · 5 reps PM', log: false, video: 'break-the-stick.mp4',
     cues: ['Lie on your back with your feet in tabletop, hips and knees at 90/90.', 'Weave a stick between your legs so one leg rests on top of it and the other sits behind it, then hold either end.', 'Keep your low back flat on the floor throughout.', 'Press the top leg up into the stick and the bottom leg down into it, as if trying to break the stick in half, without letting your legs move.'] },
-  { name: 'Pretzel Mobilization', rx: '5 sec hold · 3 reps AM · 3 reps PM', log: false, video: '',
+  { name: 'Pretzel Mobilization', rx: '5 sec hold · 3 reps AM · 3 reps PM', log: false, video: 'pretzel-mobilization.mp4',
     cues: ['Lie on your affected side and bring both knees toward your chest.', 'Hold the top knee, then straighten the bottom leg until it lines up with your hip.', 'Hook your bottom arm under the leg you are holding.', 'Rotate your upper body open toward the ceiling.', 'Press your bent leg into your forearm and resist it in an isometric hold, then release and take up any new slack.'] },
   { name: 'Transversus Abdominis Hold', rx: '5 sec hold · 10 reps · every hour', log: false, video: '',
     cues: ['Find your hip bones at the front and hook your fingers just inside them on either side.', 'Gently draw your lower belly inward and feel the muscle pop up under your fingers.', 'Keep breathing normally. Do not hold your breath or tuck the pelvis.', 'This is a low-effort, deep contraction, not a hard brace.'] },
@@ -538,7 +538,7 @@ const poolExercises = [
     cues: ['Loop the strap over your shoulder, as close to the base of the neck as possible.', 'Whichever side the strap is on, place that hand behind your back to keep the shoulder blade down.', 'Apply a gentle downward pull as you side-bend and rotate your head away.', 'Keep it easy and rhythmic, with no forcing or pinching.'] },
   { name: 'Median Nerve Glide', rx: '30 reps · 1 to 2x daily', log: false, video: '',
     cues: ['Sit up tall. Bring your arm out to the side with the shoulder and elbow each at 90 degrees, like a field goal post, palm facing inward.', 'Straighten your elbow and drop your wrist toward the ground.', 'Phase 1: tilt your head toward the same side. Phase 2: tilt your head to the opposite side.', 'Glide, do not stretch. Stop short of any numbness or tingling.'] },
-  { name: 'Radial Nerve Glide', rx: '30 reps · 1 to 2x daily', log: false, video: '',
+  { name: 'Radial Nerve Glide', rx: '30 reps · 1 to 2x daily', log: false, video: 'radial-nerve-glide.mp4',
     cues: ['Stand tall with your arms by your sides.', 'Rotate the straight arm all the way inward so the palm faces backward, then bend your wrist to bring the palm up toward the ceiling.', 'Shrug the same-side shoulder at the same time.', 'Bend your neck toward or away from that side depending on how much pull you feel.', 'Glide, do not stretch. Stop short of any numbness or tingling.'] },
   { name: 'Scalene Release', rx: '30 to 60 sec hold · 3 sets · once daily', log: false, video: '',
     cues: ['Find the notch at the front where your collarbones meet.', 'Move just a little to the side of it, then hook your fingers over the collarbone and into the fleshy part.', 'Tilt your head away for a greater stretch and hold.'] },
@@ -550,9 +550,9 @@ const poolExercises = [
     cues: ['Lie on your side in a straight line, bottom knee bent for stability.', 'Lift the top leg, leading with the heel and keeping the toes pointed forward.', 'Keep your hips stacked. Do not roll backward as you lift.'] },
   { name: 'Sidelying Clams', rx: '12 to 15 reps · 2 sets', log: true, video: '',
     cues: ['Lie on your side with hips and knees bent and heels together.', 'Keep the heels touching and lift the top knee, opening like a clam.', 'Do not let the top hip roll back. The motion is at the hip, not the spine.'] },
-  { name: 'Hip Hinging', rx: '10 reps · 5 sec hold · 2 sets', log: true, video: '',
+  { name: 'Hip Hinging', rx: '10 reps · 5 sec hold · 2 sets', log: true, video: 'hip-hinge.mp4',
     cues: ['Stand tall with a slight bend in your knees.', 'Draw your belly button toward your spine and tuck your pelvis under.', 'Shift your hips backward, keeping the whole trunk long and neutral. Hinge, do not round.', 'Use a pole along your back for feedback.', 'Hold briefly, then drive your hips forward to stand tall.'] },
-  { name: 'Piriformis Stretch', rx: '30 to 60 sec hold · 3 sets', log: false, video: '',
+  { name: 'Piriformis Stretch', rx: '30 to 60 sec hold · 3 sets', log: false, video: 'piriformis-stretch-with-overpressure.mp4',
     cues: ['Lie on your back and cross the ankle of the side you are stretching over the opposite knee.', 'Draw the supporting thigh toward your chest until you feel a stretch deep in the glute.', 'Add a gentle push away through the crossed knee for a deeper release.', 'Keep it gentle and breathe. Never force it into the low back.'] },
 ];
 
@@ -675,7 +675,7 @@ function exerciseCard(section, idx, ex) {
       <span class="exercise-chevron" onclick="toggleExercise('${cid}')">&#9660;</span>
     </div>
     <div class="exercise-body">
-      ${ex.video ? `<div class="exercise-video"><video src="${ex.video}" controls playsinline preload="metadata"></video></div>` : ''}
+      ${ex.video ? `<div class="exercise-video"><video src="${ex.video}" autoplay muted loop playsinline preload="metadata"></video></div>` : ''}
       <div class="cue-box"><h5>Coaching Cues</h5><ul>${ex.cues.map(c => `<li>${c}</li>`).join('')}</ul></div>
       ${ex.log ? renderLogBlock(section, idx, sets) : ''}
       <textarea class="notes-input" placeholder="Notes on this exercise..." onchange="saveExNotes('${section}',${idx},this.value)">${notes}</textarea>
@@ -706,9 +706,10 @@ function toggleCheck(section, idx) {
   document.getElementById('check-' + section + '-' + idx)?.classList.toggle('done', done);
   document.getElementById('card-' + section + '-' + idx)?.classList.toggle('done-card', done);
   updateProgress(section);
-  saveAll();
   if (section === 'daily') checkDailyComplete();
   if (section === 'pool') maybeOfferReset();
+  syncTodayHistory();
+  saveAll();
 }
 function addSet(section, idx) {
   const k = exKey(section, idx);
@@ -729,7 +730,7 @@ function saveExNotes(section, idx, val) { hepLog[notesKey(section, idx)] = val; 
 function saveSessionNotes() {
   const date = todayKey();
   hepLog['s-' + date + '-notes'] = document.getElementById('session-notes').value;
-  if (completedDays.includes(date)) upsertTodayHistory();
+  syncTodayHistory();
   saveAll();
 }
 
@@ -775,6 +776,20 @@ function upsertTodayHistory() {
     round: poolRound,
     notes: hepLog['s-' + date + '-notes'] || ''
   });
+}
+
+function syncTodayHistory() {
+  const date = todayKey();
+  history = history.filter(h => h.date !== date);
+  if (doneCount('daily') > 0 || doneCount('pool') > 0) {
+    history.push({
+      date: date,
+      dailyDone: doneCount('daily'), dailyTotal: dailyExercises.length,
+      poolDone: doneCount('pool'), poolTotal: poolExercises.length,
+      round: poolRound,
+      notes: hepLog['s-' + date + '-notes'] || ''
+    });
+  }
 }
 
 // ---------- ROTATION RESET ----------
