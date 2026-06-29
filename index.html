@@ -517,22 +517,22 @@ const CLIENT_NAME = 'Adam Judelson';
 // --- DAILY SECTION ---------------------------------------------------
 const dailyIntro = 'Check off each exercise as you complete it each day. The counter resets every 24 hours. Tap an exercise to see relevant cues.';
 const dailyExercises = [
-  { name: 'Posture Openers', rx: '5 sec holds · 5 reps · every hour', log: false, video: '',
+  { name: 'Posture Openers', rx: '5 sec holds · 5 reps · every hour', log: false, video: 'posture-openers.mp4',
     cues: ['Stand tall with your arms relaxed by your sides.', 'Rotate your palms outward so they face forward.', 'Squeeze your shoulder blades back and down, then hold for 5 seconds.'] },
   { name: 'Break the Stick', rx: '5 sec hold · 5 reps AM · 5 reps PM', log: false, video: 'break-the-stick.mp4',
     cues: ['Lie on your back with your feet in tabletop, hips and knees at 90/90.', 'Weave a stick between your legs so one leg rests on top of it and the other sits behind it, then hold either end.', 'Keep your low back flat on the floor throughout.', 'Press the top leg up into the stick and the bottom leg down into it, as if trying to break the stick in half, without letting your legs move.'] },
   { name: 'Pretzel Mobilization', rx: '5 sec hold · 3 reps AM · 3 reps PM', log: false, video: 'pretzel-mobilization.mp4',
     cues: ['Lie on your affected side and bring both knees toward your chest.', 'Hold the top knee, then straighten the bottom leg until it lines up with your hip.', 'Hook your bottom arm under the leg you are holding.', 'Rotate your upper body open toward the ceiling.', 'Press your bent leg into your forearm and resist it in an isometric hold, then release and take up any new slack.'] },
-  { name: 'Transversus Abdominis Hold', rx: '5 sec hold · 10 reps · every hour', log: false, video: '',
+  { name: 'Transversus Abdominis Hold', rx: '5 sec hold · 10 reps · every hour', log: false, video: 'transverse-abdominus.mp4',
     cues: ['Find your hip bones at the front and hook your fingers just inside them on either side.', 'Gently draw your lower belly inward and feel the muscle pop up under your fingers.', 'Keep breathing normally. Do not hold your breath or tuck the pelvis.', 'This is a low-effort, deep contraction, not a hard brace.'] },
-  { name: 'Hip Flexor Stretch', rx: '30 sec hold · 3 reps · once daily', log: false, video: '',
+  { name: 'Hip Flexor Stretch', rx: '30 sec hold · 3 reps · once daily', log: false, video: 'kneeling-hip-flexor-stretch.mp4',
     cues: ['Half-kneel with a pad under the kneeling knee and both legs at 90/90.', 'Extend tall through your body and tuck your pelvis under on the kneeling side.', 'Do not lean forward. The stretch should come from the pelvic tuck, not the lean.'] },
 ];
 
 // --- ROTATION SECTION ------------------------------------------------
 const poolIntro = 'Pick 3 to 4 of these to do each day. Work through the whole list over the course of the week. It resets once every exercise has been marked complete. Tap an exercise to see relevant cues.';
 const poolExercises = [
-  { name: 'Thoracic Extension over Foam Roller', rx: 'Seated · 10 reps · 2 to 3x daily', log: false, video: '',
+  { name: 'Thoracic Extension over Foam Roller', rx: 'Seated · 10 reps · 2 to 3x daily', log: false, video: 'thoracic-extension.mp4',
     cues: ['Place the foam roller against your mid-back, just below the shoulder blades. You can also do this with the roller between your back and a chair.', 'Put your hands behind your head and keep your elbows in.', 'Ease back into extension over the roller, keeping the motion in the mid-back.'] },
   { name: 'First Rib Mobilization with Strap', rx: '15 reps per side · 2 sets daily', log: false, video: '',
     cues: ['Loop the strap over your shoulder, as close to the base of the neck as possible.', 'Whichever side the strap is on, place that hand behind your back to keep the shoulder blade down.', 'Apply a gentle downward pull as you side-bend and rotate your head away.', 'Keep it easy and rhythmic, with no forcing or pinching.'] },
@@ -542,13 +542,13 @@ const poolExercises = [
     cues: ['Stand tall with your arms by your sides.', 'Rotate the straight arm all the way inward so the palm faces backward, then bend your wrist to bring the palm up toward the ceiling.', 'Shrug the same-side shoulder at the same time.', 'Bend your neck toward or away from that side depending on how much pull you feel.', 'Glide, do not stretch. Stop short of any numbness or tingling.'] },
   { name: 'Scalene Release', rx: '30 to 60 sec hold · 3 sets · once daily', log: false, video: '',
     cues: ['Find the notch at the front where your collarbones meet.', 'Move just a little to the side of it, then hook your fingers over the collarbone and into the fleshy part.', 'Tilt your head away for a greater stretch and hold.'] },
-  { name: 'Snow Angels on Foam Roller', rx: '15 reps · 1 set · daily', log: false, video: '',
+  { name: 'Snow Angels on Foam Roller', rx: '15 reps · 1 set · daily', log: false, video: 'chicken-wings.mp4',
     cues: ['Lie lengthwise along the foam roller with your head and pelvis supported, knees bent and feet flat for stability.', 'Start with your arms down by your sides, palms down.', 'Lift both arms overhead with your elbows by your ears and palms facing up.', 'Slowly cactus the arms by bending the elbows, keeping the backs of your hands and your elbows as close to the floor as possible.', 'Once in the field goal post position, keep the bend in your elbows and draw them down toward your waist, then cycle again from the start.'] },
-  { name: 'Pelvic Tilt', rx: '5 sec holds · 10 reps · as needed to reset', log: false, video: '',
+  { name: 'Pelvic Tilt', rx: '5 sec holds · 10 reps · as needed to reset', log: false, video: 'pelvic-tilt.mp4',
     cues: ['Lie on your back with knees bent and feet flat.', 'Gently flatten your low back into the floor by tilting the pelvis, then release.', 'Keep it a small, controlled motion. Use it to reset whenever the back feels stiff.'] },
-  { name: 'Sidelying Hip Abduction', rx: '12 to 15 reps · 2 sets', log: true, video: '',
+  { name: 'Sidelying Hip Abduction', rx: '12 to 15 reps · 2 sets', log: true, video: 'sidelying-leg-lift.mp4',
     cues: ['Lie on your side in a straight line, bottom knee bent for stability.', 'Lift the top leg, leading with the heel and keeping the toes pointed forward.', 'Keep your hips stacked. Do not roll backward as you lift.'] },
-  { name: 'Sidelying Clams', rx: '12 to 15 reps · 2 sets', log: true, video: '',
+  { name: 'Sidelying Clams', rx: '12 to 15 reps · 2 sets', log: true, video: 'sidelying-clam.mp4',
     cues: ['Lie on your side with hips and knees bent and heels together.', 'Keep the heels touching and lift the top knee, opening like a clam.', 'Do not let the top hip roll back. The motion is at the hip, not the spine.'] },
   { name: 'Hip Hinging', rx: '10 reps · 5 sec hold · 2 sets', log: true, video: 'hip-hinge.mp4',
     cues: ['Stand tall with a slight bend in your knees.', 'Draw your belly button toward your spine and tuck your pelvis under.', 'Shift your hips backward, keeping the whole trunk long and neutral. Hinge, do not round.', 'Use a pole along your back for feedback.', 'Hold briefly, then drive your hips forward to stand tall.'] },
