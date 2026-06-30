@@ -697,7 +697,16 @@ function renderSetRow(section, idx, si, s) {
     <input class="log-input" type="text" placeholder="lbs / band" value="${s.load || ''}" onchange="saveSet('${section}',${idx},${si},'load',this.value)">
   </div>`;
 }
-function toggleExercise(cid) { document.getElementById('card-' + cid)?.classList.toggle('open'); }
+function toggleExercise(cid) {
+  const card = document.getElementById('card-' + cid);
+  if (!card) return;
+  card.classList.toggle('open');
+  const v = card.querySelector('video');
+  if (v) {
+    if (card.classList.contains('open')) { v.play().catch(function(){}); }
+    else { v.pause(); }
+  }
+}
 
 function toggleCheck(section, idx) {
   const k = checkKey(section, idx);
