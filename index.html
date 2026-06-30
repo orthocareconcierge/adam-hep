@@ -190,8 +190,8 @@ body {
 .exercise-card.open .exercise-body { display: block; }
 
 /* video slot: appears only when an exercise has a video filename set */
-.exercise-video { margin-top: 12px; border-radius: var(--radius-sm); overflow: hidden; background: #000; }
-.exercise-video video { width: 100%; display: block; }
+.exercise-video { margin: 12px auto 0; border-radius: var(--radius-sm); overflow: hidden; background: #000; max-width: 280px; }
+.exercise-video video { width: 100%; max-height: 70vh; display: block; }
 
 .cue-box { background: var(--dark); border-radius: var(--radius-sm); padding: 11px; margin-top: 12px; }
 .cue-box h5 { font-size: 8px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
@@ -675,7 +675,7 @@ function exerciseCard(section, idx, ex) {
       <span class="exercise-chevron" onclick="toggleExercise('${cid}')">&#9660;</span>
     </div>
     <div class="exercise-body">
-      ${ex.video ? `<div class="exercise-video"><video src="${ex.video}" autoplay muted loop playsinline preload="metadata"></video></div>` : ''}
+      ${ex.video ? `<div class="exercise-video"><video src="${ex.video}?v=2" autoplay muted loop playsinline preload="metadata"></video></div>` : ''}
       <div class="cue-box"><h5>Coaching Cues</h5><ul>${ex.cues.map(c => `<li>${c}</li>`).join('')}</ul></div>
       ${ex.log ? renderLogBlock(section, idx, sets) : ''}
       <textarea class="notes-input" placeholder="Notes on this exercise..." onchange="saveExNotes('${section}',${idx},this.value)">${notes}</textarea>
